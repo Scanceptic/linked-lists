@@ -8,6 +8,7 @@ function createLinkedList(nodes) {
 			console.log("append...");
 		},
 		prepend: function (value) {
+			this.nodeList.unshift(createNode(value, this.nodeList[0].value));
 			console.log("prepend...");
 		},
 		size: function () {
