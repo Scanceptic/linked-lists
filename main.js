@@ -1,20 +1,30 @@
 function createLinkedList() {
+	/* 
+        Linkedlist stores the headnode, and then every new node
+        has to be attached to the headnode or become the new headnode
+    */
 	return {
-        headNode: null,
-        prepend: function (value) {
+		// Initially there is no defined headnode (empty list)
+		headNode: null,
+		// prepend a node to the front of the list
+		prepend: function (value) {
 			console.log("prepend...");
+			// next node is null
 			let node = null;
-            if (headNode !== null) {
-                node = headNode;
-            }
-            headNode = createNode(value, node);
+			// if headnode exists
+			if (this.headNode !== null) {
+				// make it the next node
+				node = this.headNode;
+			}
+			// make a new headnode with the given value
+			// if headnode existed prior, make it the next node pointer
+			// otherwise nextnode is null
+			this.headNode = createNode(value, node);
 		},
 		append: function (value) {
 			console.log("append...");
-            
-			
 		},
-		
+
 		size: function () {
 			console.log("size...");
 		},
