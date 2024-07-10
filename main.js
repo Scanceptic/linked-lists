@@ -41,6 +41,19 @@ function createLinkedList() {
 
 		size: function () {
 			console.log("size...");
+			// select node
+			let node = this.headNode;
+			// initialize size counter
+			let counter = 0;
+			// loop through list while node isnt null
+			while (node !== null) {
+				// increment counter
+				counter++;
+				// go a layer further
+				node = node.nextNode;
+			}
+            // return count
+            return counter;
 		},
 		head: function () {
 			console.log("head...");
