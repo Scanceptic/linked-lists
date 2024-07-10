@@ -116,6 +116,21 @@ function createLinkedList() {
 		},
 		find: function (value) {
 			console.log("find...");
+			// select node
+			let node = this.headNode;
+			// make index counter
+			let counter = 0;
+			// loop through list
+			while (node !== null) {
+				// if node matches value return index
+				if (node.value === value) return counter;
+				// increment counter
+				counter++;
+				// go a layer further
+				node = node.nextNode;
+			}
+			// return null if no matches
+			return null;
 		},
 		toString: function () {
 			console.log("toString...");
