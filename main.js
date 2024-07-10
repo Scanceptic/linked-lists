@@ -1,27 +1,28 @@
-function createLinkedList(nodes) {
-	nodeList = nodes;
+function createLinkedList() {
 	return {
-		nodeList,
+        headNode: null,
+        prepend: function (value) {
+			console.log("prepend...");
+			let node = null;
+            if (headNode !== null) {
+                node = headNode;
+            }
+            headNode = createNode(value, node);
+		},
 		append: function (value) {
 			console.log("append...");
-			nodeList.push(createNode(value));
-			nodeList[nodeList.length - 2].nextNode = value;
+            
+			
 		},
-		prepend: function (value) {
-			console.log("prepend...");
-			nodeList.unshift(createNode(value, nodeList[0].value));
-		},
+		
 		size: function () {
 			console.log("size...");
-			return nodeList.length;
 		},
 		head: function () {
 			console.log("head...");
-			return nodeList[0];
 		},
 		tail: function () {
 			console.log("tail...");
-			return nodeList[nodeList.length - 1];
 		},
 		at: function (index) {
 			console.log("at...");
@@ -48,11 +49,5 @@ function createNode(value = null, nextNode = null) {
 	};
 }
 
-const LinkedList = createLinkedList([
-	createNode(2, 5),
-	createNode(5, 9),
-	createNode(9, 12),
-	createNode(12, 1),
-	createNode(1, 55),
-	createNode(55, 277),
-]);
+const LinkedList = createLinkedList();
+console.log(LinkedList);
