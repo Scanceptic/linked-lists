@@ -65,8 +65,8 @@ function createLinkedList() {
 			console.log("tail...");
 			// select node
 			let node = this.headNode;
-            // if node is null return null
-            if (node === null) return node;
+			// if node is null return null
+			if (node === null) return node;
 			// loop through list while nextNode isnt null
 			while (node.nextNode !== null) {
 				// go a layer further
@@ -77,6 +77,21 @@ function createLinkedList() {
 		},
 		at: function (index) {
 			console.log("at...");
+			// select node
+			let node = this.headNode;
+			// initialize index counter
+			let counter = 0;
+			// loop through list while counter is less than index
+			while (counter < index) {
+				// if node is null return null
+				if (node === null) return node;
+				// increment counter
+				counter++;
+				// go a layer further
+				node = node.nextNode;
+			}
+			// return node at index
+			return node;
 		},
 		pop: function () {
 			console.log("pop...");
@@ -101,4 +116,7 @@ function createNode(value = null, nextNode = null) {
 }
 
 const LinkedList = createLinkedList();
-console.log(LinkedList);
+// create test nodes
+for (let i = 1; i <= 15; i++) {
+	LinkedList.append(i * 2);
+}
