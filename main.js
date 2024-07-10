@@ -23,6 +23,20 @@ function createLinkedList() {
 		},
 		append: function (value) {
 			console.log("append...");
+			// set selected node to headNode
+			let node = this.headNode;
+			// if no nodes then prepend does the same thing
+			if (node === null) {
+				this.prepend(value);
+			} else {
+				// jump through list to find where nextnode is null
+				while (node.nextNode !== null) {
+					// go a layer further into list
+					node = node.nextNode;
+				}
+				// make nextnode
+				node.nextNode = createNode(value);
+			}
 		},
 
 		size: function () {
