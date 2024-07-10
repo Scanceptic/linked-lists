@@ -95,6 +95,10 @@ function createLinkedList() {
 		},
 		pop: function () {
 			console.log("pop...");
+			// find second last node
+			node = this.at(this.size() - 2);
+			// remove last node
+			node.nextNode = null;
 		},
 		contains: function (value) {
 			console.log("contains...");
@@ -117,6 +121,6 @@ function createNode(value = null, nextNode = null) {
 
 const LinkedList = createLinkedList();
 // create test nodes
-for (let i = 1; i <= 15; i++) {
+for (let i = 1; i <= 5; i++) {
 	LinkedList.append(i * 2);
 }
