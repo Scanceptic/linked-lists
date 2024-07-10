@@ -52,14 +52,28 @@ function createLinkedList() {
 				// go a layer further
 				node = node.nextNode;
 			}
-            // return count
-            return counter;
+			// return count
+			return counter;
 		},
 		head: function () {
 			console.log("head...");
+			// select node
+			let node = this.headNode;
+			return node;
 		},
 		tail: function () {
 			console.log("tail...");
+			// select node
+			let node = this.headNode;
+            // if node is null return null
+            if (node === null) return node;
+			// loop through list while nextNode isnt null
+			while (node.nextNode !== null) {
+				// go a layer further
+				node = node.nextNode;
+			}
+			// return node at end
+			return node;
 		},
 		at: function (index) {
 			console.log("at...");
