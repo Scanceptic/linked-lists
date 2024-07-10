@@ -134,6 +134,21 @@ function createLinkedList() {
 		},
 		toString: function () {
 			console.log("toString...");
+			// make nodes string
+			let nodes = ``;
+			// select node
+			let node = this.headNode;
+			// loop through list
+			while (node !== null) {
+				// add node value to string
+				nodes = nodes + `( ${node.value} ) -> `;
+				// go a layer further
+				node = node.nextNode;
+			}
+			// add null
+			nodes = nodes + "null";
+			// return list of nodes
+			return nodes;
 		},
 	};
 }
