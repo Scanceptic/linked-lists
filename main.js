@@ -3,22 +3,25 @@ function createLinkedList(nodes) {
 	return {
 		nodeList,
 		append: function (value) {
-			this.nodeList.push(createNode(value));
-			this.nodeList[this.nodeList.length - 2].nextNode = value;
 			console.log("append...");
+			nodeList.push(createNode(value));
+			nodeList[nodeList.length - 2].nextNode = value;
 		},
 		prepend: function (value) {
-			this.nodeList.unshift(createNode(value, this.nodeList[0].value));
 			console.log("prepend...");
+			nodeList.unshift(createNode(value, nodeList[0].value));
 		},
 		size: function () {
 			console.log("size...");
+			return nodeList.length;
 		},
 		head: function () {
 			console.log("head...");
+			return nodeList[0];
 		},
 		tail: function () {
 			console.log("tail...");
+			return nodeList[nodeList.length - 1];
 		},
 		at: function (index) {
 			console.log("at...");
