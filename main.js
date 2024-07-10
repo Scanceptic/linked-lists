@@ -102,6 +102,17 @@ function createLinkedList() {
 		},
 		contains: function (value) {
 			console.log("contains...");
+			// select node
+			let node = this.headNode;
+			// loop through list
+			while (node !== null) {
+				// if node matches value return true
+				if (node.value === value) return true;
+				// go a layer further
+				node = node.nextNode;
+			}
+			// return false if no matches
+			return false;
 		},
 		find: function (value) {
 			console.log("find...");
