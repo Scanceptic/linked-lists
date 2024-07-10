@@ -3,7 +3,8 @@ function createLinkedList(nodes) {
 	return {
 		nodeList,
 		append: function (value) {
-			this.nodeList.push({ value, next });
+			this.nodeList.push(createNode(value));
+			this.nodeList[this.nodeList.length - 2].nextNode = value;
 			console.log("append...");
 		},
 		prepend: function (value) {
